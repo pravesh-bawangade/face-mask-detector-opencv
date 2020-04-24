@@ -44,8 +44,10 @@ def main():
             else:
                 cv2.rectangle(frame, (startX, startY), (endX, endY), (0, 0, 255), 4)
                 cv2.putText(frame, "Face Without Mask #{}".format(i + 1), (startX - 10, startY - 10),
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 4)
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
 
+        cv2.putText(frame, "Face Mask Detector", (150, 30),
+                    cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 125, 255), 2)
         cv2.imshow("Frame", frame)
         key = cv2.waitKey(1) & 0xFF
         if key == ord("q"):
